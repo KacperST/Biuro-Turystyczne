@@ -15,6 +15,7 @@ const db = getFirestore(firebase);
 const createTrip = async (req, res, next) => {
     try {
         const trip = req.body;
+        trip.reviews = [];
         await addDoc(collection(db, "trips"), trip);
         res.status(201).send("Trip created successfully");
     } catch (error) {
@@ -35,7 +36,8 @@ const getTrips = async (req, res, next) => {
                 doc.data().price,
                 doc.data().maxNumberOfParticipants,
                 doc.data().description,
-                doc.data().imageUri
+                doc.data().imageUri,
+                doc.data().reviews
             );
             trips.push(trip);
         });
@@ -101,4 +103,25 @@ const deleteTrip = async (req, res, next) => {
     }
 }
 
-export { createTrip, getTrips, getTrip, updateTrip, deleteTrip };
+const addReviewToTrip = async (req, res) => {
+    const { id } = req.params;
+    const review  = req.body;
+
+    try {
+        const docRef = doc(db, "trips", id);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+            docSnap.data().reviews.push(review);
+            const trip = docSnap.data();
+            trip.reviews.push(review);
+            await updateDoc(docRef, trip);
+            res.status(200).send("Trip updated successfully");
+        } else {
+            res.status(404).send("Trip not found");
+        }
+    } catch (error) {
+        res.status(500).send({ message: 'Server error' + error.message });
+    }
+};
+
+export { createTrip, getTrips, getTrip, updateTrip, deleteTrip, addReviewToTrip };

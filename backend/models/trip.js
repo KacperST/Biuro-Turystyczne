@@ -1,5 +1,7 @@
+import Review from './review.js';
+
 class Trip {
-    constructor(id, name, destinationCountry, startingDate,endingDate, price, maxNumberOfParticipants, description, imageUri) {
+    constructor(id, name, destinationCountry, startingDate,endingDate, price, maxNumberOfParticipants, description, imageUri, reviews = []) {
         this.id = id;
         this.name = name;
         this.destinationCountry = destinationCountry;
@@ -9,41 +11,30 @@ class Trip {
         this.maxNumberOfParticipants = maxNumberOfParticipants;
         this.description = description;
         this.imageUri = imageUri;
+        this.reviews = reviews;
+        this.averageRating = this.calculateAverageRating();
+    }
+    calculateAverageRating() {
+        if (this.reviews.length === 0) {
+            return 0;
+        }
+        let sum = 0;
+        for (let review of this.reviews) {
+            sum += review.rating;
+        }
+        return sum / this.reviews.length;
     }
 }
-const trip1 = {
+const tripData = {
     "id": 1,
-    "name": "Trip 1",
-    "destinationCountry": "Country 1",
-    "startingDate": "2022-01-01",
-    "endingDate": "2022-01-10",
+    "name": "Trip to Paris",
+    "destinationCountry": "France",
+    "startingDate": "2022-10-01",
+    "endingDate": "2022-10-10",
     "price": 1000,
-    "maxNumberOfParticipants": 10,
-    "description": "Description 1",
-    "imageUri": "image1.jpg"
-};
-
-const trip2 = {
-    "id": 2,
-    "name": "Trip 2",
-    "destinationCountry": "Country 2",
-    "startingDate": "2022-02-01",
-    "endingDate": "2022-02-10",
-    "price": 1500,
-    "maxNumberOfParticipants": 15,
-    "description": "Description 2",
-    "imageUri": "image2.jpg"
-};
-
-const trip3 = {
-    "id": 3,
-    "name": "Trip 3",
-    "destinationCountry": "Country 3",
-    "startingDate": "2022-03-01",
-    "endingDate": "2022-03-10",
-    "price": 2000,
     "maxNumberOfParticipants": 20,
-    "description": "Description 3",
-    "imageUri": "image3.jpg"
+    "description": "Explore the beautiful city of Paris",
+    "imageUri": "https://example.com/paris.jpg",
 };
+
 export default Trip;
