@@ -1,7 +1,7 @@
 import Review from './review.js';
 
 class Trip {
-    constructor(id, name, destinationCountry, startingDate,endingDate, price, maxNumberOfParticipants, description, imageUri, reviews = []) {
+    constructor(id, name, destinationCountry, startingDate,endingDate, price, maxNumberOfParticipants,numberOfParticipants = maxNumberOfParticipants, description, imageUri, reviews = []) {
         this.id = id;
         this.name = name;
         this.destinationCountry = destinationCountry;
@@ -9,6 +9,7 @@ class Trip {
         this.endingDate = endingDate;
         this.price = price;
         this.maxNumberOfParticipants = maxNumberOfParticipants;
+        this.numberOfParticipants = numberOfParticipants;
         this.description = description;
         this.imageUri = imageUri;
         this.reviews = reviews;

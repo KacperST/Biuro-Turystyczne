@@ -1,0 +1,126 @@
+.tripCard{
+    width: 60vw;
+    height: 13vw;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    overflow: visible;
+    transition: all 0.3s ease-in-out;
+    margin: 20px;
+    display: flex;
+    justify-content: baseline;
+    border-top-left-radius: 125px;
+    border-bottom-left-radius: 125px;
+    position: relative;
+}
+.tripName{
+    margin-top: -4px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+}
+.destinationCountry {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: black;
+}
+.description {
+    font-size: 1rem;
+    font-weight: 300;
+    color: black;
+
+}
+img{
+    width: 250px;
+    height: auto;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+    border-radius: 125px;
+    margin-right: 10px;;
+}
+.tripCardInfo{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    margin: 0;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+.tripDetails {
+    margin-left: 5px;
+    width: 75%;
+    height: 100%;
+}
+.tripInfo {
+    width: 25%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px solid black;
+}
+.price{
+    top: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: black;
+}
+.dateInfo {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: black;
+}
+.reverseButton{
+    background: rgb(253,29,29);
+    background: linear-gradient(135deg, rgba(253,29,29,1) 61%, rgba(253,33,30,1) 61%, rgba(252,176,69,1) 100%);
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    width: 140px;
+    height: 40px;
+}
+.reverseButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.numberOfParticipants {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: black;
+}
+.deleteTripIcon {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 5px solid black;
+}
+.icon {
+    position: absolute;
+    right:  -15px;
+    top: -15px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    align-items: center;
+    background: rgb(253,29,29);
+    background: linear-gradient(135deg, rgba(253,29,29,1) 61%, rgba(253,33,30,1) 61%, rgba(252,176,69,1) 100%);
+   border-radius: 50%;
+}
+.detele-icon {
+   color: white;
+  
+}

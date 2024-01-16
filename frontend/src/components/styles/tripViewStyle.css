@@ -1,0 +1,15 @@
+.trips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.trips-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+h1 {
+    margin: 20px;
+}

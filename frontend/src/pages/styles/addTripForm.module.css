@@ -1,0 +1,77 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background: rgb(2,0,36);
+    background: linear-gradient(135deg, rgba(2,0,36,1) 4%, rgba(9,9,121,1) 86%, rgba(0,212,255,1) 100%);
+
+}
+.container {
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+
+}
+.addForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90vh;
+    align-items: center;
+    width: 50vw;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 30px;;
+}
+.inputStyle {
+    height: 30px;
+    margin: 2px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.labelInput {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 10px;
+    display: flex;
+    width: 30vw;
+    flex-direction: column;
+}
+label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 30vw;
+}
+.dateInput {
+    width: 30vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+.descriptionStyle {
+    display: flex;
+    height: 100px;
+    overflow-wrap: break-word;
+    align-items: flex-start;
+    text-align: left;
+    margin: 2px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.dataPicker {
+    margin-left: 10px;
+    width: 6vw;
+}
+.buttonStyle {
+    width: 300px;
+    height: 50px;
+    margin-bottom: 20px;;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+}

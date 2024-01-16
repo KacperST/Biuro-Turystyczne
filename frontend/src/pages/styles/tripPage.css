@@ -1,0 +1,8 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100wh;
+    background: rgb(2,0,36);
+    background: linear-gradient(135deg, rgba(2,0,36,1) 4%, rgba(9,9,121,1) 86%, rgba(0,212,255,1) 100%);
+}

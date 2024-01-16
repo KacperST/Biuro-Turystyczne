@@ -35,9 +35,11 @@ const getTrips = async (req, res, next) => {
                 doc.data().endingDate,
                 doc.data().price,
                 doc.data().maxNumberOfParticipants,
+                doc.data().numberOfParticipants,
                 doc.data().description,
                 doc.data().imageUri,
-                doc.data().reviews
+                doc.data().reviews,
+                doc.data().averageRating
             );
             trips.push(trip);
         });
